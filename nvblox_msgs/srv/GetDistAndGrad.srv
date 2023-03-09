@@ -1,0 +1,5 @@
+geometry_msgs/Point[] points
+---
+float32[] distances
+geometry_msgs/Point[] gradients
+bool success

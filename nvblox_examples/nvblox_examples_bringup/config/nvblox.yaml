@@ -24,7 +24,7 @@ nvblox_node:
     min_height: -0.1
     max_height: 0.1
     esdf: true
-    esdf_2d: true
+    esdf_2d: false
     mesh: true
     distance_slice: true
     tsdf_integrator_max_integration_distance_m: 4.0

@@ -35,6 +35,7 @@
 
 #include <libstatistics_collector/topic_statistics_collector/topic_statistics_collector.hpp>
 #include <nvblox_msgs/srv/file_path.hpp>
+#include <nvblox_msgs/srv/get_dist_and_grad.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <sensor_msgs/msg/image.hpp>
@@ -73,6 +74,9 @@ public:
   void loadMap(
     const std::shared_ptr<nvblox_msgs::srv::FilePath::Request> request,
     std::shared_ptr<nvblox_msgs::srv::FilePath::Response> response);
+  void getDistAndGrad(
+    const std::shared_ptr<nvblox_msgs::srv::GetDistAndGrad::Request> request,
+    std::shared_ptr<nvblox_msgs::srv::GetDistAndGrad::Response> response);
 
   // Does whatever processing there is to be done, depending on what
   // transforms are available.
@@ -150,6 +154,7 @@ private:
   rclcpp::Service<nvblox_msgs::srv::FilePath>::SharedPtr save_ply_service_;
   rclcpp::Service<nvblox_msgs::srv::FilePath>::SharedPtr save_map_service_;
   rclcpp::Service<nvblox_msgs::srv::FilePath>::SharedPtr load_map_service_;
+  rclcpp::Service<nvblox_msgs::srv::GetDistAndGrad>::SharedPtr get_dist_and_grad_service_;
 
   // Callback groups.
   rclcpp::CallbackGroup::SharedPtr group_processing_;
